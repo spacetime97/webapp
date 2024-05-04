@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9ecef;
+    overflow: hidden;
+}
+.topnav{
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+#logoicon{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 8px;
+}
+.ri-subtract-line {
+    font-size: 20px;
+}
+.ri-add-line {
+    font-size: 20px;
+}
+.ri-font-size-2 {
+    margin-left: 20px;
+}
+#aligntextleft {
+    margin-left: 20px;
+}
+
+#fontFamilySelect {
+    padding: 8px;
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9ecef;
+    overflow: scroll;
+}
+#fontSizeInput {
+    width: 50px;
+    padding: 8px;
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9ecef;
+}
+#lineheightvalue {
+    width: 40px;
+    padding: 8px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9ecef;
+}
+.textspacingcontroller {
+    padding-left: 10px;
+}
+#textspacingvalue {
+    width: 40px;
+    padding: 8px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9ecef;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.toolbar {
+    width: 30px;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.logoicon {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e9ecef;
+    color: black;
+    cursor: pointer;
+}
+/* Increase the size of Remix icons */
+i {
+    font-size: 20px; /* Adjust the size as needed */
+}
+/* Style for undo and redo buttons */
+#undo, #redo {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#undo:hover, #redo:hover {
+    background-color: #e9ecef;
+    color: black;
+    cursor: pointer;
+}
+
+canvas {
+    flex: 1;
+    border-radius: 10px;
+    margin: 30px;
+    margin-left: 70px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.05);
+}
+
+/* Add styles for the layers */
+.layers {
+    width: 200px;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.layers h3 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.layers h3 i {
+    margin-right: 5px;
+}
+
+#layerList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.layerItem {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    cursor: grab; /* Set the cursor to indicate that the item can be grabbed */
+}
+ .layerItem:active{
+    cursor: grabbing; /* Set the cursor when the item is being dragged */
+}
+
+.layerItem:hover {
+    background-color: #e9ecef;
+}
+.bringtofront {
+    margin-left: 20px;
+}
+.ri-contrast-drop-fill {
+    margin-left: 20px;
+}
+
+
+.gradientBtn {
+    width: 30%;
+    height: 30%;
+
+}
+
+.titlelabel {
+    font-size: 15px;
+    font-style: normal;
+    margin-right: 40px;
+}
+
+ /* Styles for the menu container */
+        .menu-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the menu toggle button */
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        /* Styles for the menu items */
+        .menu-items {
+           display: none;
+            position: absolute;
+            top: 40%;
+            left: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            list-style: none;
+            margin: 0;
+            width: 140px;
+            border-radius: 10px;
+            z-index: 20;
+        }
+
+        /* Show menu items when hovering over the menu container */
+        .menu-container:hover .menu-items {
+            display: block;
+        }
+
+        /* Styles for the corner radius menu items */
+        .cornerradiusmenu-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left:-50px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            list-style: none;
+            margin: 0;
+            width: 150px;
+            margin-left: 20px;
+            border-radius: 10px;
+            z-index: 20;
+        }
+
+        /* Show corner radius menu items when hovering over the menu container */
+        .menu-container:hover .cornerradiusmenu-items {
+            display: block;
+        }
+
+        .ri-rounded-corner {
+    margin-left: 20px;
+}
+
+       /* Show menu items when hovering over the menu container */
+        .menu-container:hover .opacityadjustmenu-items {
+            display: block;
+        }
+
+        /* Styles for the opacity adjust menu items */
+        .opacityadjustmenu-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -50px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            list-style: none;
+            margin: 0;
+            width: 150px;
+            margin-left: 20px;
+            border-radius: 10px;
+            z-index: 20;
+        }
+
+        /* Show opacity menu items when hovering over the menu container */
+        .menu-container:hover .opacityadjustmenu-items {
+            display: block;
+        }
+
+.ri-contrast-drop-fill {
+    margin-left: 20px;
+}
+        
+        /* Styles for the shadow adjust menu items */
+        .shadowadjustmenu-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -50px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            list-style: none;
+            margin: 0;
+            width: 150px;
+            border-radius: 10px;
+            z-index: 20;
+        }
+
+        /* Show shadow adjust menu items when hovering over the menu container */
+        .menu-container:hover .shadowadjustmenu-items {
+            display: block;
+        }
+
+
+.ri-shadow-line {
+    margin-left: 20px;
+}
+
+input[type="color"] {
+      background-color: white;
+      width: 35px;
+      height: 35px;
+      border: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}
+
+
+

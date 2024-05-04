@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="remixicon/fonts/remixicon.css">
+    <link rel="shortcut icon" href="\C:\Users\naidu\Downloads\KARTHIK\Product creation\kdesigntooleditor\appicon\Kenvaslogoicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="app.js" defer></script>
+    <title>Kenvas-Design</title>
+</head>
+<body>
+    <div class="topnav">
+            <!-- Logo editor icon -->
+            <button id="logoicon"><img src="\C:\Users\naidu\Downloads\KARTHIK\Product creation\kdesigntooleditor\appicon\Kenvaslogoicon.png" alt="kenvasdesign logo" style="width: 40px;height: 40px;"></button>
+            <!-- Red and undo -->
+            <button id="undo"><i class="ri-arrow-go-back-line"></i></button>
+            <button id="redo"><i class="ri-arrow-go-forward-line"></i></button>
+            <!-- Font style and decoration -->
+            <button id="boldBtn"><i class="ri-bold"></i></button>
+            <button id="italicBtn"><i class="ri-italic"></i></button>
+            <button id="underlineBtn"><i class="ri-underline"></i></button>
+            <button id="strikethroughBtn"><i class="ri-strikethrough-2"></i></button>
+            <!-- Font Color picker -->
+            <button id="fontcolorBtn"><i class="ri-font-color"></i></button>
+            <input type="color" id="fontcolorPicker" value="#000000" style="display: none;">
+            <!-- Font size changer -->
+            <i class="fontSizeControls">
+                <i class="ri-font-size-2">
+                <button id="fontSizeDecrease"><i class="ri-subtract-line"></i></button>
+                <input type="number" id="fontSizeInput" value="20" min="1">
+                <button id="fontSizeIncrease"><i class="ri-add-line"></i></button>
+            </i>
+            <!-- Font Family changer -->
+             <i class="fontfamilychanger">
+            <button id="fontfamilyBtn"><i class="ri-font-family"></i></button>
+            <select id="fontFamilySelect">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Futura">Futura</option>
+                <option value="Bodoni">Bodoni</option>
+                <option value="Poppins">Poppins</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Rockwell">Rockwell</option>
+                <option value="Franklin Gothic">Franklin Gothic</option>
+                <option value="Didot">Didot</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Gotham">Gotham</option>
+                <option value="Alba">Alba</option>
+                <option value="a Awal Ramadhan">a Awal Ramadhan</option>
+                <option value="Nexa">Nexa</option>
+                <!-- Add more font options as needed -->
+            </select>
+        </i>
+             <!-- Text alignment buttons -->
+             <button id="aligntextleft"><i class="ri-align-left"></i></button>
+             <button id="aligntextcenter"><i class="ri-align-center"></i></button>
+             <button id="aligntextright"><i class="ri-align-right"></i></button>
+             <!-- text line spacing height control -->
+             <i class="lineheightcontroller">
+                 <i class="ri-line-height">
+                  <input type="number" id="lineheightvalue" value="1" min="1">  
+             </i>
+             <!-- text character spacing control -->
+             <i class="textspacingcontroller">
+                 <i class="ri-text-spacing">
+                  <input type="number" id="textspacingvalue" value="1" min="1">  
+             </i>
+             <!-- bring to front and back-->
+             <i class="bringtofrontandback">
+                 <button class="bringtofront"><i class="ri-bring-forward"></i></button>
+                 <button class="bringtoback"><i class="ri-send-backward"></i></button>
+             </i>
+             <!-- rounded corner radius for image and rect-->
+             <i class="menu-container">
+                <span class="menu-toggle"><i class="ri-rounded-corner"></i></span>
+                <ul class="cornerradiusmenu-items">
+                <label class="titlelabel">Corner radius</label>
+                <input type="range" id="rounderradiusSlider" min="0" max="1" step="0.01" value="0"/>
+               </ul>
+            </i>
+             <! -- opacity for objects-->
+              <i class="menu-container">
+                <span class="menu-toggle"><i class="ri-contrast-drop-fill"></i></span>
+                <ul class="opacityadjustmenu-items">
+                <label class="titlelabel">Opacity</label>
+                <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="1"/>
+               </ul>
+            </i>  
+            <! -- Drop shadow for objects-->
+                <i class="menu-container">
+                <span class="menu-toggle"><i class="ri-shadow-line"></i></span>
+                <ul class="shadowadjustmenu-items">
+                <label class="titlelabel">Drop Shadow</label>
+                <input type="range" id="shadowSlider" min="0" max="1" step="0.01" value="0"/>
+                <label class="titlelabel">Left-right</label>
+                <input type="range" id="shadowleftrightSlider" min="0" max="1" step="0.01" value="0"/>
+                <label class="titlelabel">Top-bottom</label>
+                <input type="range" id="shadowtopbottomSlider" min="0" max="1" step="0.01" value="0"/>
+                <input type="color" id="shadowcolorPicker" value="#000000">
+               </ul>
+            </i>
+            </div>
+    <div class="app-container">
+        <div class="toolbar">
+            <!-- Add text -->
+            <button id="addText"><i class="ri-text"></i></button>
+            <!-- Add image -->
+            <button id="uploadImageBtn"><i class="ri-image-add-line"></i></button>
+            <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+            <!-- Add shapes -->
+            <i class="menu-container">
+                <span class="menu-toggle"><i class="ri-shapes-line"></i></span>
+                <ul class="menu-items">
+                  <label class="titlelabel">Shapes</label>
+                 <button id="addRect"><i class="ri-square-line"></i></button>
+                 <button id="addCircle"><i class="ri-circle-line"></i></button>
+                 <button id="addtriangle"><i class="ri-triangle-line"></i></button>
+                 <button id="addStar"><i class="ri-star-line"></i></button>
+                 <button id="addArrow"><i class="ri-arrow-up-line"></i></button>
+                 <button id="addHeart"><i class="ri-heart-line"></i></button>
+               </ul>
+            </i>
+            <!-- Color picker -->
+            <button id="colorpickericon"><i class="ri-paint-fill"></i></button>
+            <input type="color" id="colorPicker" value="#000000" style="display: none;">
+            <!-- Download and Export as image -->
+            <button id="download"><i class="ri-download-2-line"></i></button>
+        </div>
+        <div class="canvas">
+            <canvas id="canvas" width="1060" height="590"></canvas> 
+        </div>
+        <div class="layers">
+           <h3><i class="ri-stack-line"></i> Layers</h3>
+           <ul id="layerList"></ul>
+        </div>
+</body>
+</html>
