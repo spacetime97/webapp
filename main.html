@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    <link rel="stylesheet" href="styles.css"> <!-- You can link your existing styles.css if needed -->
+    <title>Welcome to Your Design Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .dashboard-container {
+            text-align: center;
+        }
+
+        .dashboard-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-button {
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 600px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dashboard-button:hover {
+            background-color: #212529;
+            color: #ffffff;
+        }
+
+        .loading-container {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            width: 0;
+            background-color: #000000;
+            border-radius: 10px;
+            transition: width 3s ease; /* Adjust the duration as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">What's in your mind today? Let's Create It!</h1>
+        <button class="dashboard-button" onclick="startLoading()">+</button>
+        <div id="loading-container" class="loading-container">
+            <div class="loading-bar">
+                <div id="loading-progress" class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function startLoading() {
+            var loadingContainer = document.getElementById('loading-container');
+            var loadingProgress = document.getElementById('loading-progress');
+
+            loadingContainer.style.display = 'flex';
+
+            setTimeout(function() {
+                loadingProgress.style.width = '100%';
+            }, 100);
+
+            setTimeout(function() {
+                window.location.href = 'editor.html';
+            }, 3000); // Simulating a 2-second loading time
+        }
+    </script>
+</body>
+</html>
